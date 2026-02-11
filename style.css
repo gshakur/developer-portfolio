@@ -9,16 +9,24 @@
     --font-main: 'Outfit', sans-serif;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --gradient-1: rgba(112, 0, 255, 0.1);
+    --gradient-2: rgba(0, 255, 136, 0.1);
+    --success-color: #00ff88;
+    --shadow-hover: rgba(0, 255, 136, 0.1);
 }
 
 body.light-mode {
-    --bg-color: #f5f5f7;
-    --text-color: #1d1d1f;
-    --primary-color: #0088cc;
-    --secondary-color: #5e00d9;
-    --glass-bg: rgba(0, 0, 0, 0.05);
-    --glass-border: rgba(0, 0, 0, 0.1);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --bg-color: #f8f9fa;
+    --text-color: #2d3436;
+    --primary-color: #0984e3;
+    --secondary-color: #6c5ce7;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.05);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --gradient-1: rgba(108, 92, 231, 0.08);
+    --gradient-2: rgba(9, 132, 227, 0.08);
+    --success-color: #00b894;
+    --shadow-hover: rgba(9, 132, 227, 0.15);
 }
 
 * {
@@ -34,8 +42,8 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     background-image:
-        radial-gradient(circle at 10% 20%, rgba(112, 0, 255, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 20%);
+        radial-gradient(circle at 10% 20%, var(--gradient-1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, var(--gradient-2) 0%, transparent 20%);
 }
 
 /* Glassmorphism Utilities */
@@ -64,7 +72,7 @@ body {
 
 .glass-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+    box-shadow: 0 10px 30px var(--shadow-hover);
     border-color: var(--primary-color);
 }
 
@@ -105,12 +113,18 @@ ul {
 
 /* Header */
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -487,8 +501,8 @@ footer {
 
 .success-message {
     background: rgba(0, 255, 136, 0.1);
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
     display: block !important;
     animation: fadeIn 0.5s ease-in-out;
 }

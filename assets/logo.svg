@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff88" />
+      <stop offset="100%" stop-color="#7000ff" />
+    </linearGradient>
+    <filter id="neonGlow" height="300%" width="300%" x="-75%" y="-75%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <g filter="url(#neonGlow)">
+    <!-- Tech Frame brackets -->
+    <path d="M25 25 L15 35 V65 L25 75" fill="none" stroke="url(#neonGradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M75 25 L85 35 V65 L75 75" fill="none" stroke="url(#neonGradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- S Shape -->
+    <path d="M60 38 H42 Q38 38 38 42 V46 Q38 50 42 50 H58 Q62 50 62 54 V58 Q62 62 58 62 H40" 
+          fill="none" stroke="url(#neonGradient)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
