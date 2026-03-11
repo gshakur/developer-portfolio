@@ -138,4 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // --- 5. AOS Animation ---
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 120,
+            easing: 'ease-out-cubic'
+        });
+    }
 });
