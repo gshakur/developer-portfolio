@@ -246,13 +246,19 @@ header.scrolled {
     flex: 1;
     display: flex;
     align-items: center;
-    color: var(--primary);
     transition: var(--transition-base);
 }
 
 .logo-link:hover {
-    color: var(--secondary);
-    transform: scale(1.1) rotate(10deg);
+    transform: scale(1.05);
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    transition: var(--transition-base);
 }
 
 .nav-links {
